@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hat1/gobyTest2/src/hatCode/driver_simple.cpp
+iostream
+-
+goby/acomms/connect.h
+-
+goby/acomms/modem_driver.h
+-
+goby/util/binary.h
+-
+goby/util/debug_logger.h
+-
+messages/io.h
+/home/hat1/gobyTest2/src/hatCode/messages/io.h
+
+include/messages/io.h
+iostream
+-
+google/protobuf/message.h
+-
+
