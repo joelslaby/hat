@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+1ba632bf1bbe9bef1c554febfda85be1 include/distress_signal.pb.cc
+6724542be185800b695097176b11c387 src/receiver/config.pb.cc
+1906456ab8d195ed72d51cc55f734d15 src/transmitter/config.pb.cc

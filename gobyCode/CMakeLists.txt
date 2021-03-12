@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5.1 FATAL_ERROR)
-project(goby3-examples C CXX)
+project(hat C CXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules/")
 
@@ -87,10 +87,10 @@ endif()
 
 
 ## configure to build/include
-file(GLOB_RECURSE INCLUDE_FILES RELATIVE ${project_SRC_DIR} 
-  src/messages/*.proto
-  src/messages/*.h
+file(GLOB_RECURSE INCLUDE_FILES RELATIVE ${project_SRC_DIR}/lib 
+  src/lib/*.h
+  src/lib/messages/*.proto
   )
 foreach(I ${INCLUDE_FILES})
-  configure_file(${project_SRC_DIR}/${I} ${project_INC_DIR}/${I} @ONLY)
+	configure_file(${project_SRC_DIR}/lib/${I} ${project_INC_DIR}/hat/${I} @ONLY)
 endforeach()
