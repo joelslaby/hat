@@ -1,4 +1,4 @@
-# Install script for directory: /home/hat1/gobyTest2/src
+# Install script for directory: /home/hat2/hat/gobyCode/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,8 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/hat1/gobyTest2/build/src/messages/cmake_install.cmake")
-  include("/home/hat1/gobyTest2/build/src/hatCode/cmake_install.cmake")
+  include("/home/hat2/hat/gobyCode/build/src/transmitter/cmake_install.cmake")
+  include("/home/hat2/hat/gobyCode/build/src/lib/cmake_install.cmake")
+  include("/home/hat2/hat/gobyCode/build/src/receiver/cmake_install.cmake")
 
 endif()
 

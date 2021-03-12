@@ -48,59 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hat1/gobyTest2
+CMAKE_SOURCE_DIR = /home/hat2/hat/gobyCode
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hat1/gobyTest2/build
+CMAKE_BINARY_DIR = /home/hat2/hat/gobyCode/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -126,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hat1/gobyTest2/build/CMakeFiles /home/hat1/gobyTest2/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hat2/hat/gobyCode/build/CMakeFiles /home/hat2/hat/gobyCode/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hat1/gobyTest2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hat2/hat/gobyCode/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -157,17 +111,43 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named driver_simple
+# Target rules for targets named hat_transmitter
 
 # Build rule for target.
-driver_simple: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 driver_simple
-.PHONY : driver_simple
+hat_transmitter: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hat_transmitter
+.PHONY : hat_transmitter
 
 # fast build rule for target.
-driver_simple/fast:
-	$(MAKE) -f src/hatCode/CMakeFiles/driver_simple.dir/build.make src/hatCode/CMakeFiles/driver_simple.dir/build
-.PHONY : driver_simple/fast
+hat_transmitter/fast:
+	$(MAKE) -f src/transmitter/CMakeFiles/hat_transmitter.dir/build.make src/transmitter/CMakeFiles/hat_transmitter.dir/build
+.PHONY : hat_transmitter/fast
+
+#=============================================================================
+# Target rules for targets named hat_messages
+
+# Build rule for target.
+hat_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hat_messages
+.PHONY : hat_messages
+
+# fast build rule for target.
+hat_messages/fast:
+	$(MAKE) -f src/lib/messages/CMakeFiles/hat_messages.dir/build.make src/lib/messages/CMakeFiles/hat_messages.dir/build
+.PHONY : hat_messages/fast
+
+#=============================================================================
+# Target rules for targets named hat_receiver
+
+# Build rule for target.
+hat_receiver: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hat_receiver
+.PHONY : hat_receiver
+
+# fast build rule for target.
+hat_receiver/fast:
+	$(MAKE) -f src/receiver/CMakeFiles/hat_receiver.dir/build.make src/receiver/CMakeFiles/hat_receiver.dir/build
+.PHONY : hat_receiver/fast
 
 # Help Target
 help:
@@ -175,13 +155,11 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... install"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... driver_simple"
+	@echo "... hat_transmitter"
+	@echo "... hat_messages"
+	@echo "... hat_receiver"
 .PHONY : help
 
 

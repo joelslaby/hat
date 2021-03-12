@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package goby3_course.protobuf;
+
+message Example
+{
+    optional int32 a = 1;
+    required double b = 2;
+}

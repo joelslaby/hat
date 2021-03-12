@@ -1,4 +1,4 @@
-# Install script for directory: /home/hat1/gobyTest2
+# Install script for directory: /home/hat2/hat/gobyCode
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/hat1/gobyTest2/build/src/cmake_install.cmake")
+  include("/home/hat2/hat/gobyCode/build/src/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/hat1/gobyTest2/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/hat2/hat/gobyCode/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
