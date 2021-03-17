@@ -1,3 +1,2 @@
-# launch/receiver.launch
 gobyd receiver_config/gobyd.pb.cfg
 hat_receiver --interprocess 'platform: "receiver"' -v

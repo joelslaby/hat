@@ -2,7 +2,7 @@ syntax="proto2";
 
 import "dccl/option_extensions.proto";
 
-package goby3_course.protobuf;
+package hat.protobuf;
 
 message HealthStatus
 {
