@@ -35,5 +35,9 @@ hat::apps::Receiver::Receiver()
 	// Insert what we should do with the message
     };
 
-    interprocess().subscribe<hat::groups::distress_signal>(on_distress_signal);}
-	    
+    goby::middleware::protobuf::TransporterConfig subscriber_cfg;
+    subscriber_cfg.mutable_intervehicle()->add_publisher_id(1);
+    goby::middleware::Subscriber<hat::protobuf::DistressSignal> distress_signal_subscriber(subscriber_cfg);
+
+    intervehicle().subscribe<hat::groups::distress_signal, hat::protobuf::DistressSignal>(on_distress_signal, distress_signal_subscriber);
+}

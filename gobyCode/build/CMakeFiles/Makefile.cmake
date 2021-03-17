@@ -17,7 +17,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../src/lib/groups.h"
   "../src/lib/messages/CMakeLists.txt"
   "../src/lib/messages/distress_signal.proto"
-  "../src/lib/messages/health_status.proto"
   "../src/receiver/CMakeLists.txt"
   "../src/transmitter/CMakeLists.txt"
   "/usr/lib/aarch64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake"
@@ -84,7 +83,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "include/hat/groups.h"
   "include/hat/messages/distress_signal.proto"
-  "include/hat/messages/health_status.proto"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/transmitter/CMakeFiles/CMakeDirectoryInformation.cmake"

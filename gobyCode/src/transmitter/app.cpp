@@ -36,7 +36,7 @@ void hat::apps::Transmitter::loop()
     distress_signal_msg.set_tag_id(1);
     glog.is_verbose() && glog << "Swimmer Status: " << distress_signal_msg.ShortDebugString() << std::endl;
 
-    interprocess().publish<hat::groups::distress_signal>(distress_signal_msg);
+    intervehicle().publish<hat::groups::distress_signal>(distress_signal_msg);
 }
 	    
 
