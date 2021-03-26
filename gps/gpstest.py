@@ -33,5 +33,5 @@ for i in range(20):
         session = None
         print("GPSD has terminated")
 
-print(np.mean(lats))
-print(np.mean(lons))
+print("Average Lattitude: {}" .format(np.mean(lats)))
+print("Average Longitude: {}" .format(np.mean(lons)))

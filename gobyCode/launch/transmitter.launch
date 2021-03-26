@@ -1,2 +1,2 @@
-gobyd transmitter_config/gobyd.pb.cfg
+gobyd transmitter_config/gobyd-mm.pb.cfg
 hat_transmitter --interprocess 'platform: "transmitter"' -v
