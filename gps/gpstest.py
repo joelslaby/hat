@@ -33,5 +33,12 @@ for i in range(20):
         session = None
         print("GPSD has terminated")
 
+f = open("data.txt", "w")
+
 print("Average Lattitude: {}" .format(np.mean(lats)))
+f.write(str(np.means(lats)))
+
 print("Average Longitude: {}" .format(np.mean(lons)))
+f.write(str(np.means(lons)))
+
+f.close()

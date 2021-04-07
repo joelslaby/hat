@@ -15,5 +15,6 @@ message DistressSignal
     }
     required SwimmerState state = 1;
     required uint32 tag_id = 2 [(dccl.field) = {min: 1, max: 100}];
+    required uint32 transmission_num = 3 [(dccl.field) = {min: 0, max: 1023}];
 }
 	
