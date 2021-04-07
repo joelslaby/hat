@@ -13,19 +13,22 @@
 #	
 
 #PULL FROM PI NO. 1, MOVE FILE TO TDOA DIRECTORY
-scp hat1@192.168.1.10:~/hat/gps/data.txt .
-mv data.txt data1.txt
-#mv data1.txt ~/tdoa/
+ssh hat1@192.168.1.10
+cd hat/gps
+python3 gpstest.py
+exit
 
 
-scp hat2@192.168.1.11:~/hat/gps/data.txt .
-mv data.txt data2.txt
-#mv data2.txt ~/tdoa/
+ssh hat2@192.168.1.11
+cd hat/gps
+python3 gpstest.py
+exit
 
 
-scp hat3@192.168.1.12:~/hat/gps/data.txt .
-mv data.txt data3.txt
-#mv data3.txt ~/tdoa/
+ssh hat3@192.168.1.12
+cd hat/gps
+python3 gpstest.py
+exit
 # NOTE: MOVING FILE TO DIRECTORY CONTAINING FILE W/SAME NAME
 # WILL OVERWRITE WHATEVER'S WRITTEN IN THAT FILE
 

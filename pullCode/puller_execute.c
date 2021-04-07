@@ -12,30 +12,46 @@ int main()
 	cout << "program start\n";
 	while(1)
 	{
+		cout << "starting GPS's:\n";
+		system("./start.sh");
+		delay(20);
+
 		cout << "pulling files:\n";
 		system("./puller.sh"); //NOTE: program does not continue until script is done and files are pulled
 		cout << "files pulled\n";
 
-		FILE *fp1 = fopen("test1.txt", "r'");
-		FILE *fp2 = fopen("test2.txt", "r'");
-		FILE *fp3 = fopen("test3.txt", "r'");
 
-		FILE *fp4 = fopen("tester.txt", "w");
+		FILE *fp1 = fopen("data1.txt", "r'");
+		FILE *fp2 = fopen("data2.txt", "r'");
+		FILE *fp3 = fopen("data3.txt", "r'");
+
+		FILE *fp4 = fopen("data.txt", "w");
+		
 		char c;
-
+		
 		while((c = fgetc(fp1)) != EOF)
+			printf("from hat 1:\n");
 			fputc(c,fp4);
+			printf("\n");
 			cout << "copied file 1\n";
 		while((c = fgetc(fp2)) != EOF)
+			printf("from hat 2:\n");
 			fputc(c,fp4);
+			printf("\n");
 			cout << "copied file 2\n";
 		while((c = fgetc(fp3)) != EOF)
+			printf("from hat 3:\n");
 			fputc(c,fp4);
+			printf("\n");
 			cout << "copied file 3\n";
 
-		fclose(fp1); fclose(fp2); fclose(fp3); fclose(fp4);
+		
+		fclose(fp1);
+		fclose(fp2);
+		fclose(fp3);
+		fclose(fp4);
 
-		delay(2);
+		delay(5);
 		cout << "restarting loop:\n";
 	}
 	return 0;
