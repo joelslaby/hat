@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC   -shared -Wl,-soname,libhat_messages.so -o ../../../lib/libhat_messages.so CMakeFiles/hat_messages.dir/__/__/__/include/distress_signal.pb.cc.o  /usr/lib/aarch64-linux-gnu/libprotobuf.so 

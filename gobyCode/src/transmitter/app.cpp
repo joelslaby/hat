@@ -17,6 +17,7 @@ namespace hat
 	{
 	    public:
 		Transmitter() : ApplicationBase(1.0 * si::hertz) {}
+		int num = 0; 
 
 	    private:
 		void loop() override;
@@ -34,9 +35,12 @@ void hat::apps::Transmitter::loop()
     hat::protobuf::DistressSignal distress_signal_msg;
     distress_signal_msg.set_state(hat::protobuf::DistressSignal::SAFE);
     distress_signal_msg.set_tag_id(1);
+    distress_signal_msg.set_transmission_num(num);
     glog.is_verbose() && glog << "Swimmer Status: " << distress_signal_msg.ShortDebugString() << std::endl;
 
     intervehicle().publish<hat::groups::distress_signal>(distress_signal_msg);
+
+    num += 1;
 }
 	    
 
