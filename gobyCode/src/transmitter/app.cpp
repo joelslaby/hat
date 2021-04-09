@@ -16,7 +16,7 @@ namespace hat
 	class Transmitter : public ApplicationBase 
 	{
 	    public:
-		Transmitter() : ApplicationBase(1.0 * si::hertz) {}
+		Transmitter() : ApplicationBase(0.05 * si::hertz) {} //match frequency to TDMA cycle
 		int num = 0; 
 
 	    private:
