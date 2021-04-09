@@ -13,8 +13,8 @@
 #	
 
 #PULL FROM PI NO. 1, MOVE FILE TO TDOA DIRECTORY
-scp hat1@192.168.1.10:~/hat/gps/data.txt .
-mv data.txt data1.txt
+# scp hat1@192.168.1.10:~/hat/gps/data.txt .
+# mv data.txt data1.txt
 #mv data1.txt ~/tdoa/
 
 

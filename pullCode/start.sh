@@ -13,22 +13,13 @@
 #	
 
 #PULL FROM PI NO. 1, MOVE FILE TO TDOA DIRECTORY
-ssh hat1@192.168.1.10
-cd hat/gps
-python3 gpstest.py
-exit
+# ssh hat1@192.168.1.10 'python3 hat/gps/gpstest.py'
 
 
-ssh hat2@192.168.1.11
-cd hat/gps
-python3 gpstest.py
-exit
+ssh hat2@192.168.1.11 'python3 hat/gps/gpstest.py'
 
 
-ssh hat3@192.168.1.12
-cd hat/gps
-python3 gpstest.py
-exit
+ssh hat3@192.168.1.12 'python3 hat/gps/gpstest.py'
 # NOTE: MOVING FILE TO DIRECTORY CONTAINING FILE W/SAME NAME
 # WILL OVERWRITE WHATEVER'S WRITTEN IN THAT FILE
 
