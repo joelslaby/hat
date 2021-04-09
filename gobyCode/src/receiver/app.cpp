@@ -42,7 +42,7 @@ hat::apps::Receiver::Receiver()
         glog.is_verbose() && glog << "Received Signal: " << distress_signal_msg.ShortDebugString() << std::endl;
 
 	// writes received message under current time to a file
-	file_out << distress_signal_msg.ShortDebugString() << " time: " << time(NULL) << std::endl;
+	file_out << distress_signal_msg.ShortDebugString() << " received_time: " << time(NULL) << std::endl;
     };
 
     // subscribes to DistressSignal messages 

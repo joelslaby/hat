@@ -5,6 +5,8 @@
 #include "distress_signal.pb.h"
 #include "hat/groups.h"
 
+#include <ctime>
+
 using goby::glog;
 namespace si = boost::units::si;
 using ApplicationBase = goby::zeromq::SingleThreadApplication<hat::config::Transmitter>;
@@ -36,7 +38,9 @@ void hat::apps::Transmitter::loop()
     distress_signal_msg.set_state(hat::protobuf::DistressSignal::SAFE);
     distress_signal_msg.set_tag_id(1);
     distress_signal_msg.set_transmission_num(num);
-    glog.is_verbose() && glog << "Swimmer Status: " << distress_signal_msg.ShortDebugString() << std::endl;
+    distress_signal_msg.set_transmit_time(time(NULL));
+
+    glog.is_verbose() && glog << distress_signal_msg.ShortDebugString() << std::endl;
 
     intervehicle().publish<hat::groups::distress_signal>(distress_signal_msg);
 
