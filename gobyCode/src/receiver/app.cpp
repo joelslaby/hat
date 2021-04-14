@@ -6,11 +6,11 @@
 #include "hat/groups.h"
 
 #include <fstream>
-#include <ctime>
 
 using goby::glog;
 namespace si = boost::units::si;
 using ApplicationBase = goby::zeromq::SingleThreadApplication<hat::config::Receiver>;
+using goby::time::SystemClock;
 
 namespace hat 
 {
@@ -22,7 +22,8 @@ namespace hat
 		Receiver(); 
 		std::string filename = "received_signal.txt";
 		std::fstream file_out;
-
+		SystemClock::time_point tp;
+		SystemClock::duration dtn;
 	};
     }
 }
@@ -39,10 +40,12 @@ hat::apps::Receiver::Receiver()
     
     //runs when a transmission is received
     auto on_distress_signal = [this](const hat::protobuf::DistressSignal& distress_signal_msg) {
-        glog.is_verbose() && glog << "Received Signal: " << distress_signal_msg.ShortDebugString() << std::endl;
+	tp = SystemClock::now();
+	dtn = tp.time_since_epoch();
+        glog.is_verbose() && glog << distress_signal_msg.ShortDebugString() << " received_time: " << dtn.count() << std::endl;
 
 	// writes received message under current time to a file
-	file_out << distress_signal_msg.ShortDebugString() << " received_time: " << time(NULL) << std::endl;
+	file_out << distress_signal_msg.ShortDebugString() << " received_time: " << dtn.count() << std::endl;
     };
 
     // subscribes to DistressSignal messages 
