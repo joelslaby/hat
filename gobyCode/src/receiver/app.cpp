@@ -7,6 +7,8 @@
 
 #include <fstream>
 
+#define PERIODS_PER_DAY 864000000000
+
 using goby::glog;
 namespace si = boost::units::si;
 using ApplicationBase = goby::zeromq::SingleThreadApplication<hat::config::Receiver>;
@@ -24,6 +26,7 @@ namespace hat
 		std::fstream file_out;
 		SystemClock::time_point tp;
 		SystemClock::duration dtn;
+		long int time;
 	};
     }
 }
@@ -42,10 +45,12 @@ hat::apps::Receiver::Receiver()
     auto on_distress_signal = [this](const hat::protobuf::DistressSignal& distress_signal_msg) {
 	tp = SystemClock::now();
 	dtn = tp.time_since_epoch();
-        glog.is_verbose() && glog << distress_signal_msg.ShortDebugString() << " received_time: " << dtn.count() << std::endl;
+	time = dtn.count()%PERIODS_PER_DAY;
+	glog.is_verbose() && glog << "Time since epoch: " << dtn.count() << std::endl;
+        glog.is_verbose() && glog << distress_signal_msg.ShortDebugString() << " receive_time: " << time << std::endl;
 
 	// writes received message under current time to a file
-	file_out << distress_signal_msg.ShortDebugString() << " received_time: " << dtn.count() << std::endl;
+	file_out << distress_signal_msg.ShortDebugString() << " receive_time: " << time << std::endl;
     };
 
     // subscribes to DistressSignal messages 
