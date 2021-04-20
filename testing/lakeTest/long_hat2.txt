@@ -1,0 +1,12 @@
+state: SAFE tag_id: 1 transmission_num: 2 transmit_time: 510400000129 receive_time: 509359706034
+state: SAFE tag_id: 1 transmission_num: 3 transmit_time: 510420000129 receive_time: 509379705982
+state: SAFE tag_id: 1 transmission_num: 4 transmit_time: 510440000130 receive_time: 509399705974
+state: SAFE tag_id: 1 transmission_num: 7 transmit_time: 510500000137 receive_time: 509459705913
+state: SAFE tag_id: 1 transmission_num: 8 transmit_time: 510520000129 receive_time: 509479705879
+state: SAFE tag_id: 1 transmission_num: 10 transmit_time: 510560000136 receive_time: 509519706058
+state: SAFE tag_id: 1 transmission_num: 11 transmit_time: 510580000157 receive_time: 509539705766
+state: SAFE tag_id: 1 transmission_num: 12 transmit_time: 510600000136 receive_time: 509559705771
+state: SAFE tag_id: 1 transmission_num: 13 transmit_time: 510620000146 receive_time: 509579705940
+state: SAFE tag_id: 1 transmission_num: 19 transmit_time: 510740000128 receive_time: 509701107808
+state: SAFE tag_id: 1 transmission_num: 24 transmit_time: 510840000128 receive_time: 509799707705
+state: SAFE tag_id: 1 transmission_num: 26 transmit_time: 510880000166 receive_time: 509839706080
