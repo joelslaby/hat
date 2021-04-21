@@ -1,21 +1,24 @@
-clearvars; clc;
-close all;
+delay = 26.040854952378488;
 
-x = importdata('differentDistances.txt', ' ');
+x = readmatrix('labTest/nextToEachOther.txt');
 
 toSeconds = 10^-6;
 c = 1500;
 
-receive = x.data * toSeconds;
-transmit = str2num(cell2mat(x.textdata(:,8))) * toSeconds;
+transmissionNum = x(:,6);
+transmitTime = x(:,8) * toSeconds;
+receiveTime = x(:,10) * toSeconds;
+diff = receiveTime - transmitTime;
 
-delay = 26.040854952378488;
+T = table(transmissionNum, transmitTime, receiveTime, diff);
 
-diff = receive-transmit - delay;
+%remove outliers.  Set to Inf and -Inf at first then adjust
+T(T.diff>Inf,:) = [];
+T(T.diff<26.02,:) = [];
+
 h = figure();
-set(h, 'WindowStyle', 'docked')
 
 distance = diff*c;
 
 %hist(distance,30)
-plot(distance)
+plot(T.transmissionNum, T.diff)
