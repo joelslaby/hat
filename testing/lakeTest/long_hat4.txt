@@ -1,0 +1,4 @@
+state: SAFE tag_id: 1 transmission_num: 3 transmit_time: 510420000129 receive_time: 510445505652
+state: SAFE tag_id: 1 transmission_num: 11 transmit_time: 510580000157 receive_time: 510605505663
+state: SAFE tag_id: 1 transmission_num: 12 transmit_time: 510600000136 receive_time: 510625504802
+state: SAFE tag_id: 1 transmission_num: 13 transmit_time: 510620000146 receive_time: 510645504670

@@ -1,0 +1,8 @@
+state: SAFE tag_id: 1 transmission_num: 1 transmit_time: 324640000140 receive_time: 324663906739
+state: SAFE tag_id: 1 transmission_num: 2 transmit_time: 324660000132 receive_time: 324683904623
+state: SAFE tag_id: 1 transmission_num: 3 transmit_time: 324680000128 receive_time: 324703903644
+state: SAFE tag_id: 1 transmission_num: 4 transmit_time: 324700000146 receive_time: 324723905253
+state: SAFE tag_id: 1 transmission_num: 5 transmit_time: 324720000124 receive_time: 324743905636
+state: SAFE tag_id: 1 transmission_num: 6 transmit_time: 324740000139 receive_time: 324763905237
+state: SAFE tag_id: 1 transmission_num: 8 transmit_time: 324780000134 receive_time: 324803905993
+state: SAFE tag_id: 1 transmission_num: 9 transmit_time: 324800000130 receive_time: 324823903509
